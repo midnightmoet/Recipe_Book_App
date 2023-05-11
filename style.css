@@ -60,22 +60,45 @@ header h1 {
 	color: #777;
 }
 
-button {
+.recipe-item button {
 	background: slategray;
 	color: white;
 	border: none;
-	padding: 10px 20px;
-	font-size: 16px;
+	min-width: 150px;
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 14px;
 	cursor: pointer;
 	border-radius: 10px;
-	margin-bottom: 10px;
+	transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.recipe-item button:hover {
 	background: #333;
 }
 
 a {
 	color: white;
 	text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+	.recipe-item {
+		flex-direction: column;
+		/* flex-wrap: wrap; */
+	}
+	.recipe-item img {
+		width: 45%;
+		height: auto;
+		margin-bottom: 10px;
+	}
+	.recipe-item h2 {
+		text-align: center;
+		font-size: 20px;
+		padding: 0px;
+		margin-bottom: 10px;
+	}
+	.recipe-item button {
+		margin-top: 10px;
+	}
 }
