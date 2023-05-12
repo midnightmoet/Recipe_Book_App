@@ -3,25 +3,26 @@ const recipeListEl = document.getElementById('recipe-list')
 
 
 function displayRecipes(recipes) {
+
   recipeListEl.innerHTML = "";
   recipes.forEach((recipe) => {
     const recipeItemEl = document.createElement("li");
     recipeItemEl.classList.add("recipe-item");
-    recipeImageEl = document.createElement("img");
+    const recipeImageEl = document.createElement("img");
     recipeImageEl.src = recipe.image;
     recipeImageEl.alt = "recipe image";
 
-    recipeTitleEl = document.createElement("h2");
+    const recipeTitleEl = document.createElement("h2");
     recipeTitleEl.innerText = recipe.title;
 
-    recipeIngredientsEl = document.createElement("p");
+    const recipeIngredientsEl = document.createElement("p");
     recipeIngredientsEl.innerHTML = `
         <strong>Ingredients:</strong> ${recipe.extendedIngredients
           .map((ingredient) => ingredient.original)
           .join(", ")}
     `;
 
-    recipeLinkEl = document.createElement("a");
+    const recipeLinkEl = document.createElement("a");
     recipeLinkEl.href = recipe.sourceUrl;
     recipeLinkEl.innerText = "View Recipe";
 
